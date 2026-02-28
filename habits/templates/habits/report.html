@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report - Habit Tracker</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { background: #f0f2f5; font-family: Segoe UI, sans-serif; }
+.navbar { background: linear-gradient(135deg, #667eea, #764ba2) !important; }
+.card { border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+.progress { height: 12px; border-radius: 10px; }
+.progress-bar { border-radius: 10px; }
+.weekly-bar { background: linear-gradient(135deg, #667eea, #764ba2); }
+.monthly-bar { background: linear-gradient(135deg, #f6d365, #fda085); }
+.badge-streak { background: linear-gradient(135deg, #f6d365, #fda085); color: white; border-radius: 20px; padding: 4px 12px; font-size: 0.8rem; }
+.back-btn { background: linear-gradient(135deg, #667eea, #764ba2); border: none; color: white; border-radius: 10px; padding: 8px 20px; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-dark px-3 py-3">
+    <a class="navbar-brand text-white fw-bold">🎯 Habit Tracker</a>
+    <a href="/" class="btn btn-outline-light btn-sm">← Dashboard</a>
+</nav>
+<div class="container mt-4">
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="fw-bold mb-0">📅 Habit Report</h4>
+        <small class="text-muted">{{ today }}</small>
+    </div>
+</div>
+
+<!-- Bar Chart -->
+<div class="card p-4 mb-4">
+    <h6 class="fw-bold mb-3">📊 Weekly vs Monthly Completion</h6>
+    <canvas id="barChart" height="120"></canvas>
+</div>
+
+<!-- Habit wise report -->
+{% for item in report_data %}
+<div class="card p-4 mb-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="fw-bold mb-0">{{ item.habit.name }}</h6>
+        <span class="badge-streak">🔥 {{ item.streak }} day streak</span>
+    </div>
+
+    <div class="mb-2">
+        <div class="d-flex justify-content-between mb-1">
+            <small class="fw-bold text-primary">Weekly ({{ item.weekly_done }}/7 days)</small>
+            <small class="fw-bold">{{ item.weekly_percent }}%</small>
+        </div>
+        <div class="progress">
+            <div class="progress-bar weekly-bar" style="width: {{ item.weekly_percent }}%"></div>
+        </div>
+    </div>
+
+    <div class="mb-1">
+        <div class="d-flex justify-content-between mb-1">
+            <small class="fw-bold text-warning">Monthly ({{ item.monthly_done }}/30 days)</small>
+            <small class="fw-bold">{{ item.monthly_percent }}%</small>
+        </div>
+        <div class="progress">
+            <div class="progress-bar monthly-bar" style="width: {{ item.monthly_percent }}%"></div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<a href="/" class="back-btn btn mt-2 mb-4">← Back to Dashboard</a>
+</div>
+
+<script>
+var labels = [{% for item in report_data %}"{{ item.habit.name }}",{% endfor %}];
+var weekly = [{% for item in report_data %}{{ item.weekly_percent }},{% endfor %}];
+var monthly = [{% for item in report_data %}{{ item.monthly_percent }},{% endfor %}];
+
+var ctx = document.getElementById('barChart').getContext('2d');
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Weekly %',
+                data: weekly,
+                backgroundColor: '#667eea',
+                borderRadius: 8
+            },
+            {
+                label: 'Monthly %',
+                data: monthly,
+                backgroundColor: '#fda085',
+                borderRadius: 8
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: { beginAtZero: true, max: 100 }
+        },
+        plugins: {
+            legend: { position: 'bottom' }
+        }
+    }
+});
+</script>
+</body>
+</html>
