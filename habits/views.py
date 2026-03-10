@@ -17,11 +17,6 @@ def register_view(request):
         form = UserCreationForm()
     return render(request, 'habits/register.html', {'form': form})
 
-def index_view(request):
-    if request.user.is_authenticated:
-        return redirect('dashboard')
-    return render(request, 'habits/index.html')
-
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
@@ -35,7 +30,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('index')
+    return redirect('login')
 
 @login_required
 def dashboard(request):

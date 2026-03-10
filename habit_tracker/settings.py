@@ -120,4 +120,8 @@ STATIC_URL = 'static/'
 
 
 LOGIN_URL = '/login/'
+<<<<<<< HEAD
 LOGIN_REDIRECT_URL = '/dashboard/'
+=======
+LOGIN_REDIRECT_URL = '/'
+>>>>>>> 8055eecd30e8a6a803c0b4629ad9c4663a43d495
