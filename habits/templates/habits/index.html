@@ -9,15 +9,49 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-.navbar { background: linear-gradient(135deg, #3498db, #000000) !important; padding: 1rem 2rem; position: sticky; top: 0; z-index: 999; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #3498db, #000000) !important;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
 .navbar-brand { font-size: 1.4rem; font-weight: 800; color: white !important; }
 .nav-btn { border-radius: 25px; padding: 8px 20px; font-weight: 600; font-size: 0.9rem; }
 .btn-login { border: 2px solid white; color: white; background: transparent; }
 .btn-login:hover { background: white; color: #3498db; }
 .btn-signup { background: white; color: #3498db; border: 2px solid white; }
 .btn-signup:hover { background: #3498db; color: white; }
-.hero { background: linear-gradient(135deg, #3498db 0%, #000000 100%); min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; width: 600px; height: 600px; background: rgba(255,255,255,0.05); border-radius: 50%; top: -200px; right: -200px; }
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #3498db 0%, #000000 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    top: -200px; right: -200px;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+    bottom: -100px; left: -100px;
+}
+.hero-content { position: relative; z-index: 2; }
 .hero h1 { font-size: 3.5rem; font-weight: 800; color: white; line-height: 1.2; }
 .hero h1 span { color: #ffd700; }
 .hero p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin: 1.5rem 0; }
@@ -25,6 +59,14 @@ body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
 .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); color: #3498db; }
 .btn-hero2 { background: transparent; color: white; border: 2px solid white; border-radius: 30px; padding: 14px 35px; font-weight: 700; font-size: 1rem; transition: all 0.3s; text-decoration: none; display: inline-block; margin-left: 1rem; }
 .btn-hero2:hover { background: white; color: #3498db; }
+
+/* STATS */
+.stats-section { background: white; padding: 4rem 0; }
+.stat-box { text-align: center; padding: 2rem; }
+.stat-number { font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #3498db, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-label { color: #6b7280; font-weight: 600; margin-top: 0.5rem; }
+
+/* FEATURES */
 .features-section { background: #f8fafc; padding: 5rem 0; }
 .section-title { font-size: 2.2rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; }
 .section-subtitle { text-align: center; color: #6b7280; margin-bottom: 3rem; }
@@ -33,17 +75,37 @@ body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
 .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
 .feature-card h5 { font-weight: 700; margin-bottom: 0.8rem; color: #1f2937; }
 .feature-card p { color: #6b7280; font-size: 0.95rem; line-height: 1.6; }
+
+/* HOW IT WORKS */
 .how-section { background: white; padding: 5rem 0; }
 .step-card { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2.5rem; }
 .step-num { background: linear-gradient(135deg, #3498db, #000000); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; flex-shrink: 0; }
 .step-content h5 { font-weight: 700; color: #1f2937; margin-bottom: 0.3rem; }
 .step-content p { color: #6b7280; font-size: 0.95rem; }
+
+/* POSITIVE POINTS */
 .points-section { background: linear-gradient(135deg, #3498db 0%, #000000 100%); padding: 5rem 0; }
 .point-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 15px; padding: 2rem; text-align: center; color: white; backdrop-filter: blur(10px); transition: transform 0.3s; }
-.point-card:hover { transform: translateY(-5px); }
+.point-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.15); }
 .point-icon { font-size: 2.5rem; margin-bottom: 1rem; }
 .point-card h5 { font-weight: 700; margin-bottom: 0.5rem; }
 .point-card p { font-size: 0.9rem; opacity: 0.85; }
+
+/* AUTH SECTION */
+.auth-section { background: #f8fafc; padding: 5rem 0; }
+.auth-card { background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+.auth-card h3 { font-weight: 800; margin-bottom: 0.3rem; color: #1f2937; }
+.auth-card .subtitle { color: #6b7280; margin-bottom: 2rem; font-size: 0.9rem; }
+.form-label { font-weight: 600; color: #374151; font-size: 0.9rem; }
+.form-control { border-radius: 10px; border: 2px solid #e5e7eb; padding: 0.75rem 1rem; font-size: 0.95rem; }
+.form-control:focus { border-color: #3498db; box-shadow: 0 0 0 3px rgba(52,152,219,0.15); }
+.btn-auth { background: linear-gradient(135deg, #3498db, #000000); border: none; border-radius: 10px; padding: 0.85rem; font-weight: 700; color: white; width: 100%; font-size: 1rem; }
+.btn-auth:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(52,152,219,0.4); color: white; }
+.divider { text-align: center; position: relative; margin: 2rem 0; }
+.divider::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: #e5e7eb; }
+.divider span { background: white; padding: 0 1rem; color: #9ca3af; position: relative; font-size: 0.9rem; }
+
+/* FOOTER */
 footer { background: #0f172a; color: white; padding: 3rem 0 1.5rem; }
 .footer-brand { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
 .footer-desc { color: #94a3b8; font-size: 0.9rem; line-height: 1.6; }
@@ -51,13 +113,15 @@ footer { background: #0f172a; color: white; padding: 3rem 0 1.5rem; }
 .footer-link { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 0.9rem; transition: color 0.2s; }
 .footer-link:hover { color: #3498db; }
 .footer-bottom { border-top: 1px solid #1e293b; margin-top: 2rem; padding-top: 1.5rem; text-align: center; color: #64748b; font-size: 0.85rem; }
+.tech-badge { background: rgba(52,152,219,0.2); color: #3498db; border-radius: 20px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin: 3px; }
+
 @media (max-width: 480px) {
     .navbar { padding: 0.8rem 1rem !important; }
     .nav-btn { padding: 6px 14px; font-size: 0.8rem; }
     .navbar-brand { font-size: 1.1rem; }
 }
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
+    .hero h1 { font-size: 2.2rem; }
     .btn-hero2 { margin-left: 0; margin-top: 1rem; }
     .hero-btns { display: flex; flex-direction: column; gap: 1rem; }
     .hero-btns a { margin: 0 !important; text-align: center; }
@@ -66,6 +130,7 @@ footer { background: #0f172a; color: white; padding: 3rem 0 1.5rem; }
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar navbar-dark">
     <div class="d-flex align-items-center">
         <a class="navbar-brand mb-0">🎯 Habit Tracker</a>
@@ -76,36 +141,37 @@ footer { background: #0f172a; color: white; padding: 3rem 0 1.5rem; }
     </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-    <div class="container">
+    <div class="container hero-content">
         <div class="row align-items-center">
-            <div class="col-lg-7">
-                <h1>Build <span>Better Habits</span>,<br>Build Better Life 🚀</h1>
+            <div class="col-lg-6">
+                <h1>Build <span>Better Habits</span>, Build Better Life 🚀</h1>
                 <p>Track your daily habits, maintain streaks, and achieve your goals with our powerful habit tracking application built with Django.</p>
                 <div class="hero-btns">
                     <a href="/register/" class="btn-hero">Get Started Free →</a>
                     <a href="/login/" class="btn-hero2">Login</a>
                 </div>
                 <div class="mt-4 d-flex gap-3 flex-wrap">
-                    <span style="color:rgba(255,255,255,0.7);font-size:0.9rem;">✅ Free to use</span>
-                    <span style="color:rgba(255,255,255,0.7);font-size:0.9rem;">✅ No credit card</span>
-                    <span style="color:rgba(255,255,255,0.7);font-size:0.9rem;">✅ Start in seconds</span>
+                    <span style="color:rgba(255,255,255,0.7); font-size:0.9rem;">✅ Free to use</span>
+                    <span style="color:rgba(255,255,255,0.7); font-size:0.9rem;">✅ No credit card</span>
+                    <span style="color:rgba(255,255,255,0.7); font-size:0.9rem;">✅ Start in seconds</span>
                 </div>
             </div>
-            <div class="col-lg-5 text-center mt-5 mt-lg-0">
-                <div style="font-size:7rem;">🎯</div>
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                <div style="font-size:8rem;">🎯</div>
                 <div class="d-flex justify-content-center gap-3 mt-3 flex-wrap">
-                    <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:1rem 1.5rem;color:white;text-align:center;">
-                        <div style="font-size:1.5rem;font-weight:800;">🔥 21</div>
-                        <div style="font-size:0.8rem;opacity:0.7;">Day Streak</div>
+                    <div style="background:rgba(255,255,255,0.1); border-radius:15px; padding:1rem 1.5rem; color:white; text-align:center;">
+                        <div style="font-size:1.5rem; font-weight:800;">🔥 21</div>
+                        <div style="font-size:0.8rem; opacity:0.7;">Day Streak</div>
                     </div>
-                    <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:1rem 1.5rem;color:white;text-align:center;">
-                        <div style="font-size:1.5rem;font-weight:800;">✅ 5/5</div>
-                        <div style="font-size:0.8rem;opacity:0.7;">Today Done</div>
+                    <div style="background:rgba(255,255,255,0.1); border-radius:15px; padding:1rem 1.5rem; color:white; text-align:center;">
+                        <div style="font-size:1.5rem; font-weight:800;">✅ 5/5</div>
+                        <div style="font-size:0.8rem; opacity:0.7;">Today Done</div>
                     </div>
-                    <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:1rem 1.5rem;color:white;text-align:center;">
-                        <div style="font-size:1.5rem;font-weight:800;">📊 98%</div>
-                        <div style="font-size:0.8rem;opacity:0.7;">Completion</div>
+                    <div style="background:rgba(255,255,255,0.1); border-radius:15px; padding:1rem 1.5rem; color:white; text-align:center;">
+                        <div style="font-size:1.5rem; font-weight:800;">📊 98%</div>
+                        <div style="font-size:0.8rem; opacity:0.7;">Completion</div>
                     </div>
                 </div>
             </div>
@@ -113,51 +179,152 @@ footer { background: #0f172a; color: white; padding: 3rem 0 1.5rem; }
     </div>
 </section>
 
+<!-- FEATURES -->
 <section class="features-section">
     <div class="container">
         <h2 class="section-title">✨ Key Features</h2>
         <p class="section-subtitle">Everything you need to build and maintain great habits</p>
         <div class="row g-4">
-            <div class="col-md-4"><div class="feature-card"><div class="feature-icon">📊</div><h5>Progress Charts</h5><p>Beautiful donut and bar charts showing your daily, weekly and monthly progress at a glance.</p></div></div>
-            <div class="col-md-4"><div class="feature-card"><div class="feature-icon">🔥</div><h5>Streak Tracking</h5><p>Never break the chain! Track your consecutive days and stay motivated with streak counters.</p></div></div>
-            <div class="col-md-4"><div class="feature-card"><div class="feature-icon">📅</div><h5>30-Day History</h5><p>View complete 30-day history for each habit with done/missed status clearly displayed.</p></div></div>
-            <div class="col-md-4"><div class="feature-card"><div class="feature-icon">📱</div><h5>Mobile Friendly</h5><p>Fully responsive design works perfectly on phones, tablets and desktop computers.</p></div></div>
-            <div class="col-md-4"><div class="feature-card"><div class="feature-icon">🔐</div><h5>Secure Auth</h5><p>Complete user authentication with secure login, registration and session management.</p></div></div>
-            <div class="col-md-4"><div class="feature-card"><div class="feature-icon">📈</div><h5>Weekly Reports</h5><p>Detailed weekly and monthly reports showing completion percentage for every habit.</p></div></div>
-        </div>
-    </div>
-</section>
-
-<section class="how-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2 class="section-title mb-2">How It Works?</h2>
-                <p class="section-subtitle">Simple 4-step process to start tracking</p>
-                <div class="step-card"><div class="step-num">1</div><div class="step-content"><h5>Create Account</h5><p>Register with username and password — takes less than 30 seconds!</p></div></div>
-                <div class="step-card"><div class="step-num">2</div><div class="step-content"><h5>Add Your Habits</h5><p>Add habits like Exercise, Reading, Meditation with name and description.</p></div></div>
-                <div class="step-card"><div class="step-num">3</div><div class="step-content"><h5>Mark Done Daily</h5><p>Every day mark your completed habits — one click and you're done!</p></div></div>
-                <div class="step-card"><div class="step-num">4</div><div class="step-content"><h5>Track Progress</h5><p>View charts, streaks and reports to see how far you've come!</p></div></div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h5>Progress Charts</h5>
+                    <p>Beautiful donut and bar charts showing your daily, weekly and monthly progress at a glance.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">🔥</div>
+                    <h5>Streak Tracking</h5>
+                    <p>Never break the chain! Track your consecutive days and stay motivated with streak counters.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h5>30-Day History</h5>
+                    <p>View complete 30-day history for each habit with done/missed status clearly displayed.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h5>Mobile Friendly</h5>
+                    <p>Fully responsive design works perfectly on phones, tablets and desktop computers.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h5>Secure Auth</h5>
+                    <p>Complete user authentication with secure login, registration and session management.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h5>Weekly Reports</h5>
+                    <p>Detailed weekly and monthly reports showing completion percentage for every habit.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<section class="how-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title text-start mb-2">How It Works?</h2>
+                <p class="text-muted mb-4">Simple 4-step process to start tracking</p>
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Create Account</h5>
+                        <p>Register with username and password — takes less than 30 seconds!</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Add Your Habits</h5>
+                        <p>Add habits like Exercise, Reading, Meditation with name and description.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h5>Mark Done Daily</h5>
+                        <p>Every day mark your completed habits — one click and you're done!</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h5>Track Progress</h5>
+                        <p>View charts, streaks and reports to see how far you've come!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- POSITIVE POINTS -->
 <section class="points-section">
     <div class="container">
         <h2 class="section-title text-white text-center mb-2">💡 Why This Project?</h2>
         <p class="text-center mb-5" style="color:rgba(255,255,255,0.7);">Key highlights of this Django project</p>
         <div class="row g-4">
-            <div class="col-md-4"><div class="point-card"><div class="point-icon">🏗️</div><h5>MTV Architecture</h5><p>Follows Django's Model-Template-View pattern with clean separation of concerns.</p></div></div>
-            <div class="col-md-4"><div class="point-card"><div class="point-icon">🗄️</div><h5>SQLite Database</h5><p>Uses SQLite with proper ForeignKey relationships between User, Habit and HabitLog models.</p></div></div>
-            <div class="col-md-4"><div class="point-card"><div class="point-icon">🔒</div><h5>Secure & Safe</h5><p>CSRF protection, password hashing, login_required decorators for complete security.</p></div></div>
-            <div class="col-md-4"><div class="point-card"><div class="point-icon">📊</div><h5>Data Visualization</h5><p>Chart.js integration for beautiful donut and bar charts showing real-time data.</p></div></div>
-            <div class="col-md-4"><div class="point-card"><div class="point-icon">👥</div><h5>Multi-User Support</h5><p>Each user has their own private data — complete data isolation and privacy.</p></div></div>
-            <div class="col-md-4"><div class="point-card"><div class="point-icon">⚡</div><h5>Fast & Efficient</h5><p>Optimized database queries using Django ORM for fast and efficient data retrieval.</p></div></div>
+            <div class="col-md-4">
+                <div class="point-card">
+                    <div class="point-icon">🏗️</div>
+                    <h5>MTV Architecture</h5>
+                    <p>Follows Django's Model-Template-View pattern with clean separation of concerns.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="point-card">
+                    <div class="point-icon">🗄️</div>
+                    <h5>SQLite Database</h5>
+                    <p>Uses SQLite with proper ForeignKey relationships between User, Habit and HabitLog models.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="point-card">
+                    <div class="point-icon">🔒</div>
+                    <h5>Secure & Safe</h5>
+                    <p>CSRF protection, password hashing, login_required decorators for complete security.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="point-card">
+                    <div class="point-icon">📊</div>
+                    <h5>Data Visualization</h5>
+                    <p>Chart.js integration for beautiful donut and bar charts showing real-time data.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="point-card">
+                    <div class="point-icon">👥</div>
+                    <h5>Multi-User Support</h5>
+                    <p>Each user has their own private data — complete data isolation and privacy.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="point-card">
+                    <div class="point-icon">⚡</div>
+                    <h5>Fast & Efficient</h5>
+                    <p>Optimized database queries using Django ORM for fast and efficient data retrieval.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="row g-4">
@@ -169,7 +336,7 @@ footer { background: #0f172a; color: white; padding: 3rem 0 1.5rem; }
                 <div class="footer-title">Pages</div>
                 <a href="/login/" class="footer-link">Login</a>
                 <a href="/register/" class="footer-link">Register</a>
-                <a href="/dashboard/" class="footer-link">Dashboard</a>
+                <a href="/" class="footer-link">Dashboard</a>
                 <a href="/report/" class="footer-link">Report</a>
             </div>
             <div class="col-md-3">
