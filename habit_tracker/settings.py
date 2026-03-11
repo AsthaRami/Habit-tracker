@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7w^q08lg*47r#h=v&cx9t^p3*ty&b(@o$w+02rl$a6d+aut5(4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['habit-tracker-nfpi.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
