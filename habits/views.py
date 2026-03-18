@@ -1,4 +1,19 @@
 from django.shortcuts import render, redirect, get_object_or_404
+import random
+
+QUOTES = [
+    'The secret of getting ahead is getting started. - Mark Twain',
+    'Small daily improvements lead to stunning results. - Robin Sharma',
+    'We are what we repeatedly do. Excellence is a habit. - Aristotle',
+    'Success is the sum of small efforts repeated day in and day out. - R. Collier',
+    'Motivation is what gets you started. Habit is what keeps you going. - Jim Ryun',
+    'You do not rise to the level of your goals, you fall to the level of your systems. - James Clear',
+    'An idle mind is the devil workshop. Stay consistent!',
+    'Dream big, start small, act now!',
+    'Push yourself because no one else is going to do it for you.',
+    'Great things never come from comfort zones.',
+]
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -49,7 +64,12 @@ def dashboard(request):
             'log': log,
             'streak': habit.get_streak(),
         })
-    return render(request, 'habits/dashboard.html', {'habit_data': habit_data, 'today': today})
+    context = {
+        'habit_data': habit_data,
+        'today': today,
+        'quote': random.choice(QUOTES),
+    }
+    return render(request, 'habits/dashboard.html', context)
 
 @login_required
 def add_habit(request):
